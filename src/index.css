@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend Deca', sans-serif;
+
+}
+body {
+  margin: 0;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+
+.btn{
+  background-color: #5664F5;
+  border: none;
+  font-weight: 600;
+cursor: pointer;
+font-family: 'Poppins', sans-serif;
+}
+/* Remove table borders */
+.ant-table-wrapper .ant-table-tbody > tr > th,
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  border-bottom: none !important;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th,
+.ant-table-wrapper .ant-table-thead > tr > td {
+  background: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove separator lines between headers */
+.ant-table-wrapper .ant-table-thead > tr > th:not(:last-child)::before,
+.ant-table-wrapper .ant-table-thead > tr > td:not(:last-child)::before {
+  background-color: transparent !important;
+  content: "" !important;
+  display: none !important;
+}
+
+/* Inherit font settings */
+.ant-layout,
+.ant-table-wrapper .ant-table {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+/* Remove border from Ant Design menu */
+.ant-menu-light.ant-menu-root.ant-menu-inline,
+.ant-menu-light .ant-menu-root.ant-menu-inline,
+.ant-menu-light.ant-menu-root.ant-menu-vertical,
+.ant-menu-light .ant-menu-root.ant-menu-vertical {
+  border-inline-end: none !important;
+}
+
+/* Adjust menu item height */
+.ant-menu-inline > .ant-menu-item,
+.ant-menu-vertical > .ant-menu-item,
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title,
+.ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title {
+  height: 60px !important;
+  line-height: 60px !important;
+}
+
+p{
+  margin-bottom: 0!important;
+}
+
+/* Hide default checkmark */
+.ant-checkbox-inner::after {
+  display: none !important;
+}
+
+/* Change background color when checked */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #22c55e !important; /* Green */
+  border-color: #22c55e !important;
+}
