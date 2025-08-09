@@ -137,14 +137,18 @@ const AddUser = () => {
     }
   };
 
-  const handleUpdateUser = async (id, user_type_id) => {
+  const handleUpdateUser = async (id, updatedEmail, updatedRole) => {
     try {
       const res = await fetch(apiUrl() + `user/userUpdate`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, user_type_id: role }),
+        body: JSON.stringify({
+          id,
+          email: updatedEmail,
+          user_type_id: updatedRole,
+        }),
       });
 
       const data = await res.json();
@@ -179,13 +183,8 @@ const AddUser = () => {
       dataIndex: "user_email",
       key: "email",
     },
+
     {
-      title: "Role ID",
-      dataIndex: "user_type_id",
-      key: "role",
-      render: (role) => <Tag color="blue">#{role}</Tag>,
-    },
-     {
       title: "Role Name",
       dataIndex: "user_type_name",
       key: "roleName",
@@ -305,7 +304,7 @@ const AddUser = () => {
         open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         onOk={() => {
-          handleUpdateUser(editUserId, role);
+          handleUpdateUser(editUserId, email, role);
           setIsModalVisible(false);
         }}
       >
@@ -315,7 +314,6 @@ const AddUser = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full h-14 px-2 border border-gray-300 rounded-lg mb-2"
-          disabled
         />
         <Text text="Role" />
         <select
