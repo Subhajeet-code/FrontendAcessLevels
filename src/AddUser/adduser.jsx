@@ -11,6 +11,8 @@ import {
   Modal,
 } from "antd";
 import { apiUrl } from "../utils/utils";
+import Navbar from "../Online Broadband Ordering/Navbar";
+import Footer from "../Online Broadband Ordering/Footer";
 import Sidebar from "../Customer Portal/Sidebar";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -232,72 +234,79 @@ const AddUser = () => {
   return (
     <>
       <Layout className="min-h-screen">
-        <ToastContainer />
-        <Layout hasSider>
-          <Sidebar />
-          <Layout className="p-6">
-            <Tabs
-              activeKey={activeTab}
-              onChange={(key) => setActiveTab(key)}
-              centered
-            >
-              <TabPane tab="Create User" key="1">
-                <div className="max-w-lg mx-auto mt-4">
-                  <Text text="Email ID" />
-                  <InputField
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <Text text="Password" />
-                  <div className="relative">
-                    <InputField
-                      type={show ? "text" : "password"}
-                      placeholder="Enter password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <span
-                      onClick={() => setShow(!show)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
-                    >
-                      {show ? <FiEye size={18} /> : <FiEyeOff size={18} />}
-                    </span>
-                  </div>
-                  <Text text="Role" />
-                  <select
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
-                    className="w-full h-14 px-2 border border-gray-300 rounded-lg bg-white text-gray-700 text-sm mb-4"
-                  >
-                    <option value="">Select Role</option>
-                    {roles.map((r) => (
-                      <option key={r.id} value={r.id}>
-                        {r.name}
-                      </option>
-                    ))}
-                  </select>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <Layout>
+            <ToastContainer />
+            <Layout hasSider>
+              <Sidebar />
+              <Layout className="p-6">
+                <Tabs
+                  activeKey={activeTab}
+                  onChange={(key) => setActiveTab(key)}
+                  centered
+                  tabBarStyle={{ color: "green" }}
+                >
+                  <TabPane tab="Create User" key="1">
+                    <div className="max-w-lg mx-auto mt-4">
+                      <Text text="Email ID" />
+                      <InputField
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      <Text text="Password" />
+                      <div className="relative">
+                        <InputField
+                          type={show ? "text" : "password"}
+                          placeholder="Enter password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <span
+                          onClick={() => setShow(!show)}
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+                        >
+                          {show ? <FiEye size={18} /> : <FiEyeOff size={18} />}
+                        </span>
+                      </div>
+                      <Text text="Role" />
+                      <select
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                        className="w-full h-14 px-2 border border-gray-300 rounded-lg bg-white text-gray-700 text-sm mb-4"
+                      >
+                        <option value="">Select Role</option>
+                        {roles.map((r) => (
+                          <option key={r.id} value={r.id}>
+                            {r.name}
+                          </option>
+                        ))}
+                      </select>
 
-                  <SubmitButton
-                    label={loading ? "Creating..." : "Create User"}
-                    onClick={handleSignUp}
-                  />
-                </div>
-              </TabPane>
+                      <SubmitButton
+                        label={loading ? "Creating..." : "Create User"}
+                        onClick={handleSignUp}
+                      />
+                    </div>
+                  </TabPane>
 
-              <TabPane tab="User List" key="2">
-                <Spin spinning={tabLoading}>
-                  <Table
-                    dataSource={users}
-                    rowKey="id"
-                    columns={columns}
-                    pagination={{ pageSize: 5 }}
-                  />
-                </Spin>
-              </TabPane>
-            </Tabs>
+                  <TabPane tab="User List" key="2">
+                    <Spin spinning={tabLoading}>
+                      <Table
+                        dataSource={users}
+                        rowKey="id"
+                        columns={columns}
+                        pagination={{ pageSize: 5 }}
+                      />
+                    </Spin>
+                  </TabPane>
+                </Tabs>
+              </Layout>
+            </Layout>
+            <Footer/>
           </Layout>
-        </Layout>
+        </div>
       </Layout>
       <Modal
         title="Edit User"

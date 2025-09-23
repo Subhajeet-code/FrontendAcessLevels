@@ -6,16 +6,16 @@ export const roles = {
 };
 
 export const menuItems = [
-  {
-    label: "Broadband Checker",
-    path: "/broadband-checker",
-    roles: [roles.Admin, roles.Provisioner, roles.Scheduler, roles.Supervisor],
-  },
-  {
-    label: "Broadband Reports",
-    path: "/broadband-reports",
-    roles: [roles.Admin],
-  },
+  // {
+  //   label: "Broadband Checker",
+  //   path: "/broadband-checker",
+  //   roles: [roles.Admin, roles.Provisioner, roles.Scheduler, roles.Supervisor],
+  // },
+  // {
+  //   label: "Broadband Reports",
+  //   path: "/broadband-reports",
+  //   roles: [roles.Admin],
+  // },
   {
     label: "Order Dashboard",
     path: "/order-dashboard",
@@ -27,11 +27,11 @@ export const menuItems = [
     roles: [roles.Admin, roles.Provisioner, roles.Scheduler],
   },
 
-  {
-    label: "Router Ordering/List",
-    path: "/router-ordering",
-    roles: [roles.Admin, roles.Scheduler],
-  },
+  // {
+  //   label: "Router Ordering/List",
+  //   path: "/router-ordering",
+  //   roles: [roles.Admin, roles.Scheduler],
+  // },
   {
     label: "Status Checker",
     path: "/status-checker",

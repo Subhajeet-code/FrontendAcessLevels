@@ -2,27 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lexend Deca', sans-serif;
-
+  font-family: "Lexend Deca", sans-serif;
 }
 body {
   margin: 0;
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
 }
 
-
-.btn{
-  background-color: #5664F5;
+.btn {
+  background-color: #5664f5;
   border: none;
   font-weight: 600;
-cursor: pointer;
-font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 /* Remove table borders */
 .ant-table-wrapper .ant-table-tbody > tr > th,
@@ -68,8 +66,8 @@ font-family: 'Poppins', sans-serif;
   line-height: 60px !important;
 }
 
-p{
-  margin-bottom: 0!important;
+p {
+  margin-bottom: 0 !important;
 }
 
 /* Hide default checkmark */
@@ -81,4 +79,17 @@ p{
 .ant-checkbox-checked .ant-checkbox-inner {
   background-color: #22c55e !important; /* Green */
   border-color: #22c55e !important;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #16a34a !important; /* Tailwind green-600 */
+}
+/* Active tab text */
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #16a34a !important; /* Tailwind green-600 */
+}
+
+/* Hover effect */
+.ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: #16a34a !important;
 }

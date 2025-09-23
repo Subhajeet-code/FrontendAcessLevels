@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { menuItems, roles } from "../utils/constant";
 
 const Sidebar = () => {
@@ -43,12 +43,15 @@ const Sidebar = () => {
                       {item.label}
                     </button>
                   ) : (
-                    <Link
+                    <NavLink
                       to={item.path}
-                      className="block font-medium text-[15px] text-gray-700 rounded-lg p-4 shadow-md transition-all hover:text-green-600"
+                      className={({ isActive }) =>
+                        `block font-medium text-[15px] rounded-lg p-4 shadow-md transition-all 
+     ${isActive ? "text-green-600" : "text-gray-700 hover:text-green-600"}`
+                      }
                     >
                       {item.label}
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               ))}

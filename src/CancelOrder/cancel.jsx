@@ -232,7 +232,7 @@ const Cancel = () => {
               )}
 
               <div className="w-full max-w-2xl">
-                <h1 className="text-xl font-semibold text-left mb-6">
+                <h1 className="text-xl font-semibold text-left mb-6 text-green-600">
                   Cancel Order
                 </h1>
 

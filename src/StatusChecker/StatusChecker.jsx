@@ -247,7 +247,7 @@ const StatusChecker = () => {
 
   return (
     <Layout className="min-h-screen">
-      <div className="flex flex-col min-h-screen">
+      <div >
         <Navbar />
         <Layout>
           <Layout hasSider>
@@ -260,7 +260,7 @@ const StatusChecker = () => {
               )}
 
               <div className="w-full max-w-2xl">
-                <h1 className="text-xl font-semibold text-left mb-6">
+                <h1 className="text-xl font-semibold text-left mb-6 text-green-600">
                   Check Order Status
                 </h1>
 

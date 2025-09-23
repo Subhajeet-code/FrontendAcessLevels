@@ -140,7 +140,7 @@ const Regrade = () => {
 
   return (
     <Layout className="min-h-screen">
-      <div className="flex flex-col min-h-screen">
+      <div>
         <Navbar />
         <Layout>
           <Layout hasSider>
@@ -153,7 +153,7 @@ const Regrade = () => {
               )}
 
               <div className="w-full max-w-2xl">
-                <h1 className="text-xl font-semibold text-left mb-6">
+                <h1 className="text-xl font-semibold text-left mb-6 text-green-600">
                   Regrade
                 </h1>
 
