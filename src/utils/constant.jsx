@@ -26,8 +26,7 @@ export const menuItems = [
     path: "/online-broadband-ordering",
     roles: [roles.Admin, roles.Provisioner, roles.Scheduler],
   },
-  // { label: "Order Tracker", path: "/order-tracker" },
-  // { label: "User Admin", path: "/user-admin", roles: [roles.Admin] },
+
   {
     label: "Router Ordering/List",
     path: "/router-ordering",

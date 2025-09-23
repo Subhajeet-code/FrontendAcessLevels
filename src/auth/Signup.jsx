@@ -97,7 +97,7 @@ const SignUpForm = () => {
   };
 
   const getAllRoles = async () => {
-    const response = await fetch(apiUrl() + "", {
+    const response = await fetch(apiUrl() + "user/getRoles", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
